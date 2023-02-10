@@ -12,7 +12,9 @@ Tela demonstrando os filmes populares do momento e quando clicado mostra os deta
 # Pré-requisitos
 
 -Node
+
 -Key de acesso da API do TMDB
+
 
 ```bash
 # clonar repositório
