@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Container, Movies, Movie } from "./styles";
-import { APIkey } from "../../../config";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   const imagePath = "https://image.tmdb.org/t/p/w500/";
   const [movies, setMovies] = useState([]);
+  const APIkey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/popular?${APIkey}&language=pt-BR`)
+    fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR`
+    )
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results);
